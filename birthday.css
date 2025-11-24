@@ -1,0 +1,151 @@
+body{
+       background: linear-gradient(135deg, #fdd1d6, #f7a8b8);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    font-family: "Poppins", sans-serif;}
+
+.block1{
+    height: 700px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+   
+    }
+
+    @keyframes borderGlow {
+        0%   { box-shadow: 0 0 0px #F7A8B8; }
+        100% { box-shadow: 0 0 20px #F7A8B8; }
+}
+.hint,.login {
+    width: 350px;
+    padding: 25px;
+    border-radius: 18px;
+    color:white;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 8px 20px rgba(247, 168, 184, 0.4);
+
+    transition: 0.1s;
+}
+
+/* Hover lift */
+.hint,.login:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(247, 168, 184, 0.55);
+}
+
+.hint,.login h2 {
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* Front side */
+.front {
+    background: #F7A8B8;
+    color: white;
+}
+
+/* Back side (hint) */
+.back {
+    background: white;
+    border: 2px solid #F7A8B8;
+    transform: rotateY(180deg);
+}
+.flip {
+    transform: rotateY(180deg);
+}
+
+
+.name{
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: 2px solid #d1d1d1;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #6a5acd;
+    box-shadow: 0 0 6px rgba(106, 90, 205, 0.4);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #6a5acd;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #5947c2;
+}
+.balloon {
+    position: absolute;
+    width: 40px;
+    height: 55px;
+    background: red;
+    border-radius: 50% 50% 45% 45%;
+    opacity: 0.8;
+    animation: floatUp 6s linear infinite;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) scale(1); }
+    100% { transform: translateY(-10vh) scale(1.2); }
+  }
+  .balloon::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: #fff;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.8;
+  }

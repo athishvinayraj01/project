@@ -1,0 +1,49 @@
+body {
+     background-color: #F7CAC9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial;
+}
+.grid {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+.cell {
+    background: #FFE6EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.balloon {
+    position: absolute;
+    width: 40px;
+    height: 55px;
+    background: red;
+    border-radius: 50% 50% 45% 45%;
+    opacity: 0.8;
+    animation: floatUp 6s linear infinite;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) scale(1); }
+    100% { transform: translateY(-10vh) scale(1.2); }
+  }
+  .balloon::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: #fff;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.8;
+  }

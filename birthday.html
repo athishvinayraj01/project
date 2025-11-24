@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="birthday.css">
+</head>
+<body>
+    <h1 style="position: absolute; left: 42%;top: 5%;">Happy Birthday</h1>
+    <div class="block1">
+    <div class="hint" onclick="flipCard()">
+       <div class="flip-inner" id="cardInner">
+        <div class="front">
+            Click for Hint
+        </div>
+
+
+        <div class="back">
+            Your hint goes here its your name and sum of date ex:1+1=2😊
+        </div>
+    </div>
+    </div>
+    <script>
+function flipCard() {
+    document.getElementById("cardInner").classList.toggle("flip");
+}
+</script>
+
+    <div class="login">
+        <h2>enter!!!</h2>
+        <label for=""style="margin-right: 20px;">name:)</label><input type="text" class="name" placeholder="Beatifull name pls">
+        <br>
+        <br>
+        <label for=""style="margin-right: 40px;">password:)</label><input  type="text" id="pass" class="name" placeholder="hint is at left">
+        <br>
+        <label><input type="checkbox" id="agree"> I Agree</label>
+    <br><br>
+    <button onclick="nextPage()">Continue</button>
+    <script>
+function nextPage() {
+    const p =document.getElementById("pass")
+     let password = document.getElementById("pass").value;
+    if (document.getElementById("agree").checked && password === "aditi2+8=10") {
+        window.location.href = "x0x.html";
+    } else {
+        alert("Please agree to continue. and Check password avoid spaces");
+    }
+}
+</script>
+    </div>
+    </div>
+<script>
+function createBalloon() {
+  const colors = ["red", "blue", "yellow", "purple", "pink", "orange"];
+  let b = document.createElement("div");
+  b.className = "balloon";
+  b.style.left = Math.random() * 100 + "vw";
+  b.style.background = colors[Math.floor(Math.random()*colors.length)];
+  b.style.animationDuration = 4 + Math.random() * 6 + "s";
+  document.body.appendChild(b);
+
+  setTimeout(() => b.remove(), 10000);
+}
+setInterval(createBalloon, 50);
+</script>
+</body>
+</html>
